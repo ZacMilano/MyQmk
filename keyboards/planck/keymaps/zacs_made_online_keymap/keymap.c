@@ -37,8 +37,6 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Default normal
-
-
   /*
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |   Tab   |    q    |    w    |    e    |    r    |    t    |    y    |    u    |    i    |    o    |    p    | Bckspce |
@@ -58,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       MO(3),    MO(6),    KC_LGUI,  KC_LALT,  MO(4),    KC_LCTL,        KC_SPC,         MO(5),                KC_NO,        KC_MUTE,        KC_VOLD,      KC_VOLU
       ),
 
-
+// Gaming layer
   /*
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |   Tab   |    q    |    w    |    e    |    r    |    t    |    y    |    u    |    i    |    o    |    p    | Bckspce |
@@ -78,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       MO(3),    MO(6),    KC_LGUI,  KC_LALT,  MO(4),    KC_SPC,         KC_SPC,         MO(5),              KC_LCTL,      KC_MUTE,        KC_VOLD,      KC_VOLU
       ),
 
-
+// Dvorak layer
   /*
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |   Tab   |    '    |    ,    |    .    |    p    |    y    |    f    |    g    |    c    |    r    |    l    | Bckspce |
@@ -98,14 +96,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       MO(3),    MO(6),    KC_LGUI,  KC_LALT,  MO(4),    KC_SPC,         KC_SPC,         MO(5),              KC_LCTL,      KC_MUTE,        KC_VOLD,      KC_VOLU
       ),
 
-
+// F-key, numpad layer
   /*
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |   Tab   |   F1    |   F2    |   F3    |   F4    |         |    /    |    7    |    8    |    9    |    -   | Backspce |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |   Esc   |   F5    |   F6    |   F7    |   F8    |         |    *    |    4    |    5    |    6    |    +    |   Del   |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|  Shift  |   F9    |   F10   |   F11   |   F12   |   vvv   |         |    1    |    2    |    3    |         |  Enter  |
+|  Shift  |   F9    |   F10   |   F11   |   F12   |         |         |    1    |    2    |    3    |         |  Enter  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |   vvv   | Layer 6 |   GUI   |   Alt   | Layer 4 |   Ctrl  |  Space  | Layer 5 |    0    |    .    |    ,    | Num Lock|
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
@@ -118,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TRNS,  MO(6),    KC_LGUI,  KC_LALT,  MO(4),    KC_LCTL,        KC_SPC,         MO(5),              KC_P0,        KC_PDOT,        KC_PCMM,      KC_NLCK
       ),
 
-
+// Numbers, common coding symbols
   /*
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |    `    |    1    |    2    |    3    |    4    |    5    |    6    |    7    |    8    |    9    |    0    | Bckspce |
@@ -138,14 +136,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TO(3),    MO(6),    KC_LGUI,  KC_LALT,  KC_TRNS,  KC_LCTL,        KC_SPC,         MO(5),                KC_CAPS,      KC_NO,          KC_NO,        KC_NO
       ),
 
-
+// Num-row symbols, arrow keys, browsing shortcuts
   /*
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |    ~    |    !    |    @    |    #    |    $    | New Term| New Term|    %    |    ^    |    &    |    *    | Bckspce |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |   Esc   |         |         |         |TODO: -->|Mouse Fun|   Left  |   Down  |    Up   |  Right  | New Tab |   Del   |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|  Shift  |         |         |         |         |         | Go Back | Prev Tab| Next Tab|         | Cls Tab |  Enter  |
+|  Shift  |         |         |         |         |         | Go Back | Prev Tab| Next Tab| Go Forw |Close Tab|  Enter  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 | Layer 3 | Layer 6 |   GUI   |   Alt   | Layer 4 |   Ctrl  |  Space  |   vvv   |   Menu  |   Prev  |  Pause  |   Next  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
@@ -158,7 +156,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       MO(3),    MO(6),    KC_LGUI,  KC_LALT,  TO(4),    KC_LCTL,      KC_SPC,         KC_TRNS,            LSFT(KC_F10), KC_MPRV,        KC_MPLY,      KC_MNXT
       ),
 
-
+// Default-layer switching (includes numpad-layer lock), sound options
   /*
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |         |Default:Q|Default:D|         |         |         |         |         |         |Music Tog|         |Beeps Tog|
