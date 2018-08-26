@@ -1,0 +1,2 @@
+#define AUDIO_CLICKY
+#define AUDIO_CLICKY_ON

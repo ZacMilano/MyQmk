@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "config.h"
 
 // Helpful defines
 #define _______ KC_TRNS
@@ -160,20 +161,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /*
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|         |Default:Q|Default:D|         |         |         |         |         |         |         |         |         |
+|         |Default:Q|Default:D|         |         |         |         |         |         |Music Tog|         |Beeps Tog|
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|         |Default:G|Default:#|         |         |         |         |         |         |         |         |         |
+|         |Default:G|Default:#|         |         |         |         |         |         |Mus Types|         |More beep|
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|         |         |         |         |         |         |         |         |         |         |         |         |
+|         |         |         |         |         |         |         |         |         |         |         |Less beep|
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |         |   vvv   |         |         |         |         |Boot Mode|         |         |         |         |         |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
    */
 	[6] = KEYMAP(
-      KC_NO,    DF(0),    DF(2),    KC_NO,    KC_NO,    KC_NO,        KC_NO,          KC_NO,              KC_NO,        KC_NO,          KC_NO,        KC_NO,
-      KC_NO,    DF(1),    DF(3),    KC_NO,    KC_NO,    KC_NO,        KC_NO,          KC_NO,              KC_NO,        KC_NO,          KC_NO,        KC_NO,
-      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,        KC_NO,          KC_NO,              KC_NO,        KC_NO,          KC_NO,        KC_NO,
+      KC_NO,    DF(0),    DF(2),    KC_NO,    KC_NO,    KC_NO,        KC_NO,          KC_NO,              KC_NO,        MU_TOG,         KC_NO,        CK_TOGG,
+      KC_NO,    DF(1),    DF(3),    KC_NO,    KC_NO,    KC_NO,        KC_NO,          KC_NO,              KC_NO,        MU_MOD,         KC_NO,        CK_UP,
+      KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,        KC_NO,          KC_NO,              KC_NO,        KC_NO,          KC_NO,        CK_DOWN,
       KC_NO,    KC_TRNS,  KC_NO,    KC_NO,    KC_NO,    KC_NO,        RESET,          KC_NO,              KC_NO,        KC_NO,          KC_NO,        KC_NO
       )
 };
