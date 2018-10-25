@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |  Shift  |    z    |    x    |    c    |    v    |    b    |    n    |    m    |    ,    |    .    |    /    |Shift/Ent|
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| Layer 3 | Layer 6 |   GUI   |   Alt   | Layer 4 |   Ctrl  |  Space  | Layer 5 |         |   Mute  |  Vol -  |  Vol +  |
+| Layer 3 | Layer 6 |   GUI   |   Alt   | Layer 4 |   Ctrl  |  Space  | Layer 5 |  Enter  |   Mute  |  Vol -  |  Vol +  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
    */
@@ -83,9 +83,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |   Esc   |    a    |    o    |    e    |    u    |    i    |    d    |    h    |    t    |    n    |    s    |    /    |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|  Shift  |    ;    |    q    |    j    |    k    |    x    |    b    |    m    |    w    |    v    |    z    |Shift/Ent|
+|  Shift  |    ;    |    q    |    j    |    k    |    x    |    b    |    m    |    w    |    v    |    z    |  Enter  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| Layer 3 | Layer 6 |   GUI   |   Alt   | Layer 4 |   Ctrl  |  Space  | Layer 5 |         |   Mute  |  Vol -  |  Vol +  |
+| Layer 3 | Layer 6 |   GUI   |   Alt   | Layer 4 |   Ctrl  |  Space  | Layer 5 |  Shift  |   Mute  |  Vol -  |  Vol +  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
    */
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,   KC_QUOT,  KC_COMM,  KC_DOT,   KC_P,     KC_Y,           KC_F,         KC_G,               KC_C,         KC_R,           KC_L,         KC_BSPC,
       KC_ESC,   KC_A,     KC_O,     KC_E,     KC_U,     KC_I,           KC_D,         KC_H,               KC_T,         KC_N,           KC_S,         KC_SLSH,
       KC_LSFT,  KC_SCLN,  KC_Q,     KC_J,     KC_K,     KC_X,           KC_B,         KC_M,               KC_W,         KC_V,           KC_Z,         RSFT_T(KC_ENT),
-      MO(3),    MO(6),    KC_LGUI,  KC_LALT,  MO(4),    KC_SPC,         KC_SPC,       MO(5),              KC_LCTL,      KC_MUTE,        KC_VOLD,      KC_VOLU
+      MO(3),    MO(6),    KC_LGUI,  KC_LALT,  MO(4),    KC_SPC,         KC_SPC,       MO(5),              KC_NO,        KC_MUTE,        KC_VOLD,      KC_VOLU
       ),
 
 // F-key, numpad layer
@@ -139,20 +139,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Num-row symbols, arrow keys, browsing shortcuts
   /*
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|    ~    |    !    |    @    |    #    |    $    | New Term| New Term|    %    |    ^    |    &    |    *    | Bckspce |
+|    ~    |    !    |    @    |    #    |    $    | Vim-Any | New Term|    %    |    ^    |    &    |    *    | Bckspce |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|   Esc   |         |         |         |TODO: -->|Mouse Fun|   Left  |   Down  |    Up   |  Right  | New Tab |   Del   |
+|   Esc   | Firefox |   Vim   | Spotify |  Steam  |         |   Left  |   Down  |    Up   |  Right  | New Tab |   Del   |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|  Shift  |         |         |         |         |         | Go Back | Prev Tab| Next Tab| Go Forw |Close Tab|  Enter  |
+|  Shift  |  Calc.  |Workspace| Windows |ALL winds|         | Go Back | Prev Tab| Next Tab| Go Forw |Close Tab|  Enter  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 | Layer 3 | Layer 6 |   GUI   |   Alt   | Layer 4 |   Ctrl  |  Space  |   vvv   |   Menu  |   Prev  |  Pause  |   Next  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
    */
 	[5] = KEYMAP(
-      KC_TILD,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   LCA(KC_T),    LCA(KC_T),      KC_PERC,            KC_CIRC,      KC_AMPR,        KC_ASTR,      KC_BSPC,
-      KC_ESC,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,        KC_LEFT,        KC_DOWN,            KC_UP,        KC_RGHT,        LCTL(KC_T),   KC_DEL,
-      KC_LSFT,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,        LALT(KC_LEFT),  LSFT(LCTL(KC_TAB)), LCTL(KC_TAB), LALT(KC_RGHT),  LCTL(KC_W),   KC_ENT,
+      KC_TILD,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   LCA(KC_V),    LCA(KC_T),      KC_PERC,            KC_CIRC,      KC_AMPR,        KC_ASTR,      KC_BSPC,
+      KC_ESC,   HYPR(KC_A),HYPR(KC_S),HYPR(KC_D),HYPR(KC_F),KC_NO,    KC_LEFT,        KC_DOWN,            KC_UP,        KC_RGHT,        LCTL(KC_T),   KC_DEL,
+      KC_LSFT,  HYPR(KC_Z),LGUI(KC_S),LGUI(KC_W),SGUI(KC_W),KC_NO,    LALT(KC_LEFT),  LSFT(LCTL(KC_TAB)), LCTL(KC_TAB), LALT(KC_RGHT),  LCTL(KC_W),   KC_ENT,
       MO(3),    MO(6),    KC_LGUI,  KC_LALT,  TO(4),    KC_LCTL,      KC_SPC,         KC_TRNS,            LSFT(KC_F10), KC_MPRV,        KC_MPLY,      KC_MNXT
       ),
 
