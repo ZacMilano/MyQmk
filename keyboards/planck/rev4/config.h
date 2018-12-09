@@ -4,5 +4,6 @@
 #include "config_common.h"
 
 #define DEVICE_VER 0x0004
+#define USB_MAX_POWER_CONSUMPTION 100
 
 #endif

@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |  Shift  |    z    |    x    |    c    |    v    |    b    |    n    |    m    |    ,    |    .    |    /    |Shift/Ent|
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| Layer 3 | Layer 6 |   GUI   |   Alt   | Layer 4 |   Ctrl  |  Space  | Layer 5 |         |   Mute  |  Vol -  |  Vol +  |
+| Layer 3 | Layer 6 |   GUI   |   Alt   | Layer 4 |   Ctrl  |  Space  | Layer 5 |   Alt   |   Mute  |  Vol -  |  Vol +  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
    */
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,           KC_Y,         KC_U,                 KC_I,         KC_O,           KC_P,         KC_BSPC,
       KC_ESC,   KC_A,     KC_S,     KC_D,     KC_F,     KC_G,           KC_H,         KC_J,                 KC_K,         KC_L,           KC_SCLN,      KC_QUOT,
       KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,           KC_N,         KC_M,                 KC_COMM,      KC_DOT,         KC_SLSH,      RSFT_T(KC_ENT),
-      MO(3),    MO(6),    KC_LGUI,  KC_LALT,  MO(4),    KC_LCTL,        KC_SPC,       MO(5),                KC_NO,        KC_MUTE,        KC_VOLD,      KC_VOLU
+      MO(3),    MO(6),    KC_LGUI,  KC_LALT,  MO(4),    KC_LCTL,        KC_SPC,       MO(5),                KC_RALT,      KC_MUTE,        KC_VOLD,      KC_VOLU
       ),
 
 // Gaming layer
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,   KC_QUOT,  KC_COMM,  KC_DOT,   KC_P,     KC_Y,           KC_F,         KC_G,               KC_C,         KC_R,           KC_L,         KC_BSPC,
       KC_ESC,   KC_A,     KC_O,     KC_E,     KC_U,     KC_I,           KC_D,         KC_H,               KC_T,         KC_N,           KC_S,         KC_SLSH,
       KC_LSFT,  KC_SCLN,  KC_Q,     KC_J,     KC_K,     KC_X,           KC_B,         KC_M,               KC_W,         KC_V,           KC_Z,         RSFT_T(KC_ENT),
-      MO(3),    MO(6),    KC_LGUI,  KC_LALT,  MO(4),    KC_SPC,         KC_SPC,       MO(5),              KC_NO,        KC_MUTE,        KC_VOLD,      KC_VOLU
+      MO(3),    MO(6),    KC_LGUI,  KC_LALT,  MO(4),    KC_SPC,         KC_SPC,       MO(5),              KC_RALT,      KC_MUTE,        KC_VOLD,      KC_VOLU
       ),
 
 // F-key, numpad layer
@@ -125,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |  Shift  |    [    |    ]    |    (    |    )    |         |         |    |    |    ,    |    .    |    /    |  Enter  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| Layer 3 | Layer 6 |   GUI   |   Alt   |   vvv   |   Ctrl  |  Space  | Layer 5 |Caps Lock|         |         |         |
+| Layer 3 | Layer 6 |   GUI   |   Alt   |   vvv   |   Ctrl  |  Space  | Layer 5 |Caps Lock|Wind Left|Windo Max|Win Right|
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
    */
@@ -133,17 +133,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,           KC_6,         KC_7,               KC_8,         KC_9,           KC_0,         KC_BSPC,
       KC_ESC,   KC_LCBR,  KC_RCBR,  KC_HOME,  KC_END,   KC_NO,          KC_NO,        KC_MINS,            KC_EQL,       LSFT(KC_MINS),  LSFT(KC_EQL), KC_DEL,
       KC_LSFT,  KC_LBRC,  KC_RBRC,  KC_LPRN,  KC_RPRN,  KC_NO,          KC_NO,        KC_PIPE,            KC_COMM,      KC_DOT,         KC_BSLS,      KC_ENT,
-      TO(3),    MO(6),    KC_LGUI,  KC_LALT,  KC_TRNS,  KC_LCTL,        KC_SPC,       MO(5),              KC_CAPS,      KC_NO,          KC_NO,        KC_NO
+      TO(3),    MO(6),    KC_LGUI,  KC_LALT,  KC_TRNS,  KC_LCTL,        KC_SPC,       MO(5),      KC_CAPS, LCTL(LGUI(KC_LEFT)), LCTL(LGUI(KC_UP)), LCTL(LGUI(KC_RIGHT))
       ),
 
 // Num-row symbols, arrow keys, browsing shortcuts
   /*
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|    ~    |    !    |    @    |    #    |    $    | Vim-Any | New Term|    %    |    ^    |    &    |    *    | Bckspce |
+|    ~    |    !    |    @    |    #    |    $    | Vimclip | New Term|    %    |    ^    |    &    |    *    | Bckspce |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|   Esc   | Firefox |   Vim   | Spotify |  Steam  |         |   Left  |   Down  |    Up   |  Right  | New Tab |   Del   |
+|   Esc   |   Ws1   |   Ws2   |   Ws3   |   Ws4   |         |   Left  |   Down  |    Up   |  Right  | New Tab |   Del   |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|  Shift  |  Calc.  |Workspace| Windows |ALL winds|         | Go Back | Prev Tab| Next Tab| Go Forw |Close Tab|  Enter  |
+|  Shift  |Move->Ws1|Move->Ws2|Move->Ws3|Move->Ws4|         | Go Back | Prev Tab| Next Tab| Go Forw |Close Tab|  Enter  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 | Layer 3 | Layer 6 |   GUI   |   Alt   | Layer 4 |   Ctrl  |  Space  |   vvv   |   Menu  |   Prev  |  Pause  |   Next  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
@@ -151,8 +151,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
 	[5] = KEYMAP(
       KC_TILD,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   LCA(KC_V),    LCA(KC_T),      KC_PERC,            KC_CIRC,      KC_AMPR,        KC_ASTR,      KC_BSPC,
-      KC_ESC,   HYPR(KC_A),HYPR(KC_S),HYPR(KC_D),HYPR(KC_F),KC_NO,    KC_LEFT,        KC_DOWN,            KC_UP,        KC_RGHT,        LCTL(KC_T),   KC_DEL,
-      KC_LSFT,  HYPR(KC_Z),LGUI(KC_S),LGUI(KC_W),SGUI(KC_W),KC_NO,    LALT(KC_LEFT),  LSFT(LCTL(KC_TAB)), LCTL(KC_TAB), LALT(KC_RGHT),  LCTL(KC_W),   KC_ENT,
+      KC_ESC,   LALT(KC_1),LALT(KC_2),LALT(KC_3),LALT(KC_4),KC_NO,    KC_LEFT,        KC_DOWN,            KC_UP,        KC_RGHT,        LCTL(KC_T),   KC_DEL,
+      KC_LSFT,  LALT(S(KC_1)),LALT(S(KC_2)),LALT(S(KC_3)),LALT(S(KC_4)),KC_NO,    LALT(KC_LEFT),  LSFT(LCTL(KC_TAB)), LCTL(KC_TAB), LALT(KC_RGHT),  LCTL(KC_W),   KC_ENT,
       MO(3),    MO(6),    KC_LGUI,  KC_LALT,  TO(4),    KC_LCTL,      KC_SPC,         KC_TRNS,            LSFT(KC_F10), KC_MPRV,        KC_MPLY,      KC_MNXT
       ),
 
