@@ -4,7 +4,19 @@
 // Helpful defines
 #define _______ KC_TRNS
 
-
+enum custom_keycodes {
+    MY_CUSTOM_MACRO = SAFE_RANGE,
+};
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        switch(keycode) {
+            case MY_CUSTOM_MACRO:
+                SEND_STRING(SS_LCTRL("s")SS_LALT(SS_TAP(X_TAB))"y"SS_TAP(X_ENTER)SS_LALT(SS_TAP(X_TAB)));
+                return false;
+        }
+    }
+    return true;
+};
 
 
 
@@ -45,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |  Shift  |    z    |    x    |    c    |    v    |    b    |    n    |    m    |    ,    |    .    |    /    |Shift/Ent|
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-| Layer 3 | Layer 6 |   GUI   |   Alt   | Layer 4 |   Ctrl  |  Space  | Layer 5 |   Alt   |   Mute  |  Vol -  |  Vol +  |
+| Layer 3 | Layer 6 |   GUI   |   Alt   | Layer 4 |   Ctrl  |  Space  | Layer 5 |   Alt   |         |         |  DMenu  |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
    */
@@ -53,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,           KC_Y,         KC_U,                 KC_I,         KC_O,           KC_P,         KC_BSPC,
       KC_ESC,   KC_A,     KC_S,     KC_D,     KC_F,     KC_G,           KC_H,         KC_J,                 KC_K,         KC_L,           KC_SCLN,      KC_QUOT,
       KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,           KC_N,         KC_M,                 KC_COMM,      KC_DOT,         KC_SLSH,      RSFT_T(KC_ENT),
-      MO(3),    MO(6),    KC_LGUI,  KC_LALT,  MO(4),    KC_LCTL,        KC_SPC,       MO(5),                KC_RALT,      KC_MUTE,        KC_VOLD,      KC_VOLU
+      MO(3),    MO(6),    KC_LGUI,  KC_LALT,  MO(4),    KC_LCTL,        KC_SPC,       MO(5),                KC_RALT,      _______,        _______,      LALT(KC_D)
       ),
 
 // Gaming layer
