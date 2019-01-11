@@ -4,19 +4,19 @@
 // Helpful defines
 #define _______ KC_TRNS
 
-enum custom_keycodes {
-    MY_CUSTOM_MACRO = SAFE_RANGE,
-};
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (record->event.pressed) {
-        switch(keycode) {
-            case MY_CUSTOM_MACRO:
-                SEND_STRING(SS_LCTRL("s")SS_LALT(SS_TAP(X_TAB))"y"SS_TAP(X_ENTER)SS_LALT(SS_TAP(X_TAB)));
-                return false;
-        }
-    }
-    return true;
-};
+// enum custom_keycodes {
+//     MY_CUSTOM_MACRO = SAFE_RANGE,
+// };
+// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+//     if (record->event.pressed) {
+//         switch(keycode) {
+//             case MY_CUSTOM_MACRO:
+//                 SEND_STRING(SS_LCTRL("s")SS_LALT(SS_TAP(X_TAB))"y"SS_TAP(X_ENTER)SS_LALT(SS_TAP(X_TAB)));
+//                 return false;
+//         }
+//     }
+//     return true;
+// };
 
 
 
@@ -171,20 +171,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Default-layer switching (includes numpad-layer lock), sound options
   /*
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|         |Default:Q|Default:D|         |         |         |         |         |         |Music Tog|         |Beeps Tog|
+|         |Default:Q|Default:D|         |         |         |         | Mouse 1 | Mouse 2 | Mouse 3 |         |Beeps Tog|
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|         |Default:G|Default:#|         |         |         |         |         |         |Mus Types|         | Pitch + |
+|         |Default:G|Default:#|         |         |         | Mouse L | Mouse D | Mouse U | Mouse R |         | Pitch + |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 |         |         |         |         |         |         |         |         |         |         |         | Pitch - |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-|         |   vvv   |         |         |         |         |Boot Mode|         |         |         |         |         |
+|         |   vvv   |         |         |         |         |Boot Mode|Music Tog|Mus Types|         |         |         |
 +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
    */
 	[6] = KEYMAP(
-      KC_NO,    DF(0),    DF(2),    KC_NO,    KC_NO,    KC_NO,        KC_NO,          KC_NO,              KC_NO,        MU_TOG,         KC_NO,        CK_TOGG,
-      KC_NO,    DF(1),    DF(3),    KC_NO,    KC_NO,    KC_NO,        KC_NO,          KC_NO,              KC_NO,        MU_MOD,         KC_NO,        CK_UP,
+      KC_NO,    DF(0),    DF(2),    KC_NO,    KC_NO,    KC_NO,        KC_NO,          KC_BTN1,            KC_BTN2,      KC_BTN3,        KC_NO,        CK_TOGG,
+      KC_NO,    DF(1),    DF(3),    KC_NO,    KC_NO,    KC_NO,        KC_MS_L,        KC_MS_D,            KC_MS_U,      KC_MS_R,        KC_NO,        CK_UP,
       KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,        KC_NO,          KC_NO,              KC_NO,        KC_NO,          KC_NO,        CK_DOWN,
-      KC_NO,    KC_TRNS,  KC_NO,    KC_NO,    KC_NO,    KC_NO,        RESET,          KC_NO,              KC_NO,        KC_NO,          KC_NO,        KC_NO
+      KC_NO,    KC_TRNS,  KC_NO,    KC_NO,    KC_NO,    KC_NO,        RESET,          MU_TOG,             MU_MOD,       KC_NO,          KC_NO,        KC_NO
       )
 };
